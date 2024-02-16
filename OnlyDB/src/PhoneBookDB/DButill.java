@@ -1,4 +1,4 @@
-package Phone_Book;
+package PhoneBookDB;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,9 +11,9 @@ public class DButill {
 	Statement stmt = null;
 	ResultSet rs = null;
 	
-	String url = "jdbc:mysql://localhost:3306/phone_book?severTimezone=UTC";
-	String user = "root";
-	String pass = "1234";
+	String url = "jdbc:mysql://13.124.144.111:3306/phoneBookDB";
+	String user = "usrid";
+	String pass = "usrpassword";
 	
 	public DButill() {
 		conn=getConnection();
@@ -105,7 +105,7 @@ public class DButill {
 		//================= DB작업 ===============
 				try {
 					stmt = conn.createStatement();
-					String sql = "DELETE FROM phone WHERE phone_ID = " + id;
+					String sql = String.format("DROP %s;", company);
 					stmt.executeUpdate(sql);
 					System.out.println("주소록 수정 완료");
 				}catch (Exception e) {

@@ -1,4 +1,4 @@
-package Phone_Book;
+package PhoneBookDB;
 
 import java.util.ArrayList;
 import java.util.Scanner;
